@@ -1,47 +1,81 @@
-<div>
-  <div class="parallax"></div>
-  <div class="listOfProducts b-s-1">
-    <div class="col">
-      <h2 class="margin-auto p-20">Products </h2>
-      <div class="row" id="wrapper">
-        <div class="col p-20" *ngFor="let category of listOfCategory" [hidden]="category.hide">
-          <div class="circle-section">
-            <p><img class="alignnone wp-image-382 size-full" [src]="category.logo" alt=""></p>
-            <div class="content">
-              <h2 class="text-capitalize">{{category.name}}</h2>
-              <p>{{category.shortDescription}}</p>
-              <p><a class="btn" [routerLink]="'/category/'+category._id">Shop Now</a></p>
-            </div>
-          </div>
+<div (scroll)="scrollHandler($event)" class="home-container">
+  <div class="top-container">
+    
+  </div>
+
+  <div class="header" [ngClass]="{'sticky': stickyHeaderEnabled}" id="myHeader">
+    <div class="col-md-12 col-12 col-sm-12">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="./assets/logo/logo1.jpeg" class="w-100 h-100">
         </div>
+        <div class="col-md-9"></div>
       </div>
     </div>
   </div>
-  <div class="second-parallax">
-    <div class="col-md-12 col-sm-12">
-      <div class="row">
-        <div class="col-md-6 col-sm-6 margin-auto text-center">
-          <h3>Stay Connected with us </h3>
-          <p>for offers and promotions</p>
-        </div>
-        <div class="col-md-4 col-sm-4 margin-auto text-left p-20">
-          <form>
-            <div class="form-group">
-              <label for="email">Name:</label>
-              <input type="tezt" class="form-control custom-input" [(ngModel)]="userName" name="userName">
-            </div>
-            <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="email" class="form-control custom-input" [(ngModel)]="email" name="email">
-            </div>
-            <div class="form-group">
-              <label for="pwd">Phone (Optional)</label>
-              <input type="number" class="form-control custom-input" [(ngModel)]="phone" name="phone">
-            </div>
-            <button type="submit" class="btn add-cart-button" (click)="subscribe()">Submit</button>
-          </form>
-        </div>
-      </div>
-    </div>
+
+  <div class="content">
+    <h3>On Scroll Sticky Header</h3>
+    <p>The header will stick to the top when you reach its scroll position.</p>
+    <p>Scroll back up to remove the sticky effect.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque
+      et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus
+      repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
   </div>
 </div>
+<!-- <script>
+  window.onscroll = function () { myFunction() };
+
+  var header = document.getElementById("myHeader");
+  var sticky = header.offsetTop;
+
+  function myFunction() {
+    if (window.pageYOffset > sticky) {
+      header.classList.add("sticky");
+    } else {
+      header.classList.remove("sticky");
+    }
+  }
+</script> -->

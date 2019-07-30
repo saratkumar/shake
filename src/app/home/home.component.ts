@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { SharedService } from '../common/shared.service';
 import { AppService } from '../app.service';
 
@@ -7,35 +7,25 @@ import { AppService } from '../app.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
   userName: string;
   email:string;
   phone:any
   listOfCategory: any =[];
+  header: any;
+  sticky:any;
+  stickyHeaderEnabled: boolean = false;
   constructor(private sharedService: SharedService,
     private appService: AppService) { }
 
   ngOnInit() {
-    this.sharedService.categoryBehaviourSubj.subscribe(data => {
-      this.listOfCategory = data;
-      this.listOfCategory.forEach(data => {
-        data.hide = data.name.indexOf('package') > -1 ? true : false;
-      })
-    });
-    this.sharedService.headerActiveCategoryBehaviourSubj.next({'categorySelectedMenuIndex': -1, 'productSelectedMenuIndex': -1});
+    this.header = document.getElementById("myHeader");
+    this.sticky = this.header.offsetTop;  
+  }
+  
+  @HostListener('window:scroll', ['$event']) scrollHandler($event) {
+    this.stickyHeaderEnabled = window.pageYOffset > this.sticky ? true : false;
   }
 
-  subscribe() {
-    let params = {
-      email: this.email,
-      name: this.userName,
-      phoneNo: this.phone
-    }
-    this.appService.postSubscription(params, (success) => {
-      this.email = '';
-      this.userName = '';
-      this.phone = '';
-      this.sharedService.showNotification.next('subscription')
-    }, (error) => {})
-  }
 }
