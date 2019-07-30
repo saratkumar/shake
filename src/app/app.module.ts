@@ -12,8 +12,6 @@ import { HomeComponent } from './home/home.component';
 import { CommonModules } from './common/common.module';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { AppService } from './app.service';
-import { HeaderComponent } from './common/header/header.component';
-import { FooterComponent } from './common/footer/footer.component';
 
 @NgModule({
   imports: [
@@ -27,8 +25,6 @@ import { FooterComponent } from './common/footer/footer.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent,
-    FooterComponent
   ],
   providers: [ AppService ],
   bootstrap: [ AppComponent ]
