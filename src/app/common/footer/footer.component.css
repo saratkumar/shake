@@ -1,0 +1,17 @@
+.footer-menu li {
+    display: inline-block;
+    list-style: none;
+    padding:10px
+}
+
+.footer-menu li::after
+ {
+     content: "-";
+     color:white;
+ }
+
+ .footer-menu-text {
+     color:white
+ }
+
+ .footer-menu li:last-child:after { content: ""; }

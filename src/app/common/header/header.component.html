@@ -1,0 +1,123 @@
+<div class="fixed-top navbar-inverse navbar-fixed-top">
+  <nav class="navbar navbar-expand-lg green-theme navbar-light">
+    <div class="col-12">
+      <div class="row share-icon">
+        <div class="col-5 d-none d-md-block d-lg-block margin-auto">
+          <a href="https://www.facebook.com/Pressato-650871208648529/" target="_blank"><i
+              class="fa fa-facebook color-white cursor-pointer" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/pressatoindia/" target="_blank"><i
+              class="fa fa-instagram p-l-10 color-white cursor-pointer" aria-hidden="true"></i></a>
+        </div>
+        <div class="col-md-2 col-sm-2 col-7 margin-auto">
+          <img src="./assets/logo/title-logo.png" style="width:85%" class="black-theme cursor-pointer"
+            [routerLink]="'/'">
+        </div>
+        <div class="col-md-5 col-sm-10 col-5 margin-auto">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto text-uppercase header-top-menu">
+              <!-- <li class="nav-item active">
+                <a class="nav-link menu-text" [routerLink]="'about-us'">about us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link menu-text" [routerLink]="'contact-us'">contact us</a>
+              </li> -->
+
+              <li class="nav-item">
+                  <a class="nav-link menu-text cursor-pointer" [routerLink]="''">Home</a>
+                </li>
+              
+              <!-- <li class="nav-item">
+                <a class="nav-link menu-text" [routerLink]="'cart'">cart <i class="fa fa-shopping-cart"><span
+                      class="badge badge-danger"
+                      *ngIf="orderCount && orderCount.carts?.length">{{orderCount.carts.length}}</span></i></a>
+              </li> -->
+            </ul>
+          </div>
+          <button class="navbar-toggler white-theme float-right" type="button" data-toggle="collapse"
+            data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+            aria-label="Toggle navigation" (click)="openNav()">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        </div>
+      </div>
+    </div>
+
+  </nav>
+  <nav class="navbar navbar-expand-lg black-theme navbar-light category-menu">
+
+    <div class="collapse navbar-collapse justify-content-right">
+      <form class="form-inline my-2 my-lg-0">
+        <ul class="navbar-nav mr-auto text-uppercase">
+          <!-- <li class="dropdown mega-dropdown nav-item" *ngFor="let category of categoryList;let categoryIndex= index;">
+            <a class="nav-link menu-text text-align-left dropdown-toggle" routerLink="category/{{category?._id}}"
+              (click)="categorySelectedMenuIndex = categoryIndex"
+              [ngClass]="{'active-menu': categoryIndex === categorySelectedMenuIndex}">{{category.name}}</a>
+            <div class="dropdown-menu mega-dropdown-menu row">
+              <div class="col-12 col-md-12 col-sm-12">
+                <div class="row font-bold">
+                  <div class="col-md-4 col-sm-6 col-6">
+                    <div class="row p-t-10">
+                      <div class="col-3 col-md-6 col-sm-3 p-l-20"
+                        *ngFor="let product of category.products;let productIndex= index;">
+                        <p class="p-r-20"> <span class="cursor-pointer sub-menu-text"
+                            routerLink="category/{{category._id}}/{{product._id}}"
+                            [ngClass]="{'active-menu': (productIndex === productSelectedMenuIndex && categorySelectedMenuIndex === categoryIndex)}"
+                            (click)="productSelectedMenuIndex = productIndex;categorySelectedMenuIndex = categoryIndex">{{product.name}}</span> </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </li> -->
+        </ul>
+      </form>
+    </div>
+  </nav>
+  <div id="mySidenav" class="sidenav">
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-10 col-10">
+          <img src="./assets/logo/title-logo.png" style="width:85%" class="black-theme">
+        </div>
+        <div class="col-sm-2 col-2">
+          <a href="javascript:void(0)" class="closebtn" (click)="openNav()">
+            &times;</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-12 col-sm-12 p-t-20 text-uppercase">
+      <p class="accordian-menu" [routerLink]="''" (click)="openNav()">home</p>
+      <!-- <ng-container *ngFor="let category of categoryList;">
+        <p data-toggle="collapse" [attr.data-target]="'#demo'+category._id" class="accordian-menu active-submenu collapsed">
+          {{category.name}}
+        </p>
+        <div [attr.id]="'demo'+category._id" class="collapse  ml-2 color-white" (click)="openNav()">
+          <div class="p-10 accordian-submenu" routerLink="category/{{category._id}}/{{product._id}}"
+            *ngFor="let product of category.products">{{product.name}}</div>
+        </div>
+      </ng-container> -->
+     
+      <!-- <ng-container *ngIf="!isUserLoggedIn">
+        <p class="accordian-menu" [routerLink]="" (click)="openNav();signIn = true;" data-toggle="modal"
+          data-target="#myModal">login</p>
+        <p class="accordian-menu" [routerLink]="" (click)="openNav();signIn = false;" data-toggle="modal"
+          data-target="#myModal">register</p>
+      </ng-container> -->
+      <!-- <p class="accordian-menu" [routerLink]="" (click)="openNav();onLogout()" *ngIf="isUserLoggedIn">logout</p> -->
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog modal-lg">
+    <app-login *ngIf="signIn" (signUp)="signIn = !signIn"></app-login>
+    <app-new-user *ngIf="!signIn" (signIn)="signIn = !signIn"></app-new-user>
+  </div>
+</div>
+
+<notifier-container></notifier-container>

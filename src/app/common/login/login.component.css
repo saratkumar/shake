@@ -1,0 +1,29 @@
+.close-button {
+    /* font-size: 29px; */
+    position: absolute;
+    right: -11px;
+    top: -11px;
+    background-color: white;
+    border-radius: 50%;
+    font-weight: 400;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.close-button {
+    width:25px;
+    height: 25px;
+    padding-left: 6px;
+    font-weight: bold;
+}
+
+.sidebar {
+    background: url('../../../assets/login/popup-sidebar.png');
+    background-position: center;
+    background-size: cover;
+    min-height:400px
+}
+
+.modal-body {
+    min-height:400px;
+  }
