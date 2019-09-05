@@ -12,6 +12,7 @@ import { HomeComponent } from './home/home.component';
 import { CommonModules } from './common/common.module';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
 import { AppService } from './app.service';
+import { ShakesMenuComponent } from './shakes-menu/shakes-menu.component';
 
 @NgModule({
   imports: [
@@ -25,6 +26,7 @@ import { AppService } from './app.service';
   declarations: [
     AppComponent,
     HomeComponent,
+    ShakesMenuComponent
   ],
   providers: [ AppService ],
   bootstrap: [ AppComponent ]

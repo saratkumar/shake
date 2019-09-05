@@ -6,9 +6,11 @@ import { RouterModule, Routes } from '@angular/router';
 // import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
 
 import { HomeComponent } from './home/home.component';
+import { ShakesMenuComponent } from './shakes-menu/shakes-menu.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
+  { path: 'menu', pathMatch: 'full', component: ShakesMenuComponent },
 ];
 
 @NgModule({

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { CommonModules } from './common/common.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './app.interceptor';
+import { ShakesMenuComponent } from './shakes-menu/shakes-menu.component';
 
 @NgModule({
   imports: [
@@ -24,5 +25,6 @@ import { TokenInterceptor } from './app.interceptor';
     // Add universal-only providers here
   ],
   bootstrap: [ AppComponent ],
+  declarations: [],
 })
 export class AppServerModule {}
